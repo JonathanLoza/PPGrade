@@ -29,57 +29,6 @@ def do_login():
     return render_template('login.html')
 
 
-@app.route('/messages', methods=['GET'])
-def return_messages():
-    session=db.getSession(engine)
-    messages=session.query(entities.Message)
-    messages_array=[]
-    for me in messages:
-        messages_array.append(me)
-    return json.dumps(messages_array, cls=connector.AlchemyEncoder)
-
-@app.route('/messages', methods=['POST'])
-def create_message():
-    c = request.get_json(silent=True)
-    print(c)
-    mes=entities.Message(
-        id=c['id'],
-        content=c['content']
-    )
-    session = db.getSession(engine)
-    session.add(mes)
-    session.commit()
-    return 'created message'
-
-@app.route('/messages/<id>',methods=['GET'])
-def get_message(id):
-    session = db.getSession(engine)
-    message = session.query(entities.User).filter(entities.User.id == id)
-    for me in message:
-        js = json.dumps(me, cls=connector.AlchemyEncoder)
-        return Response(js, status=200, mimetype='application/json')
-    message = {"status": 404, "message": "Not Found"}
-    return Response(message, status=404, mimetype='application/json')
-
-@app.route('/messages/<id>', methods=['DELETE'])
-def borrar(id):
-    session = db.getSession(engine)
-    message = session.query(entities.User).filter(entities.User.id == id)
-    for m in message:
-        session.delete(m)
-    session.commit()
-    return "DELETED"
-
-@app.route('/setmessages')
-def set_messages():
-    message1 = entities.Message(id=1,content="hola , que gusto")
-    message2 = entities.Message(id=2,content="no me caes, chau")
-    session = db.getSession(engine)
-    session.add(message1)
-    session.add(message2)
-    session.commit()
-    return 'Created messages'
-
 @app.route('/setUsers')
 def set_user():
 
@@ -133,7 +82,7 @@ def remove_user(id):
 
 @app.route('/users', methods = ['POST'])
 def create_user():
-    c = request.get_json(silent=True)
+    c = json.loads(request.form['values'])
     print(c)
     user = entities.User(
         id=c['id'],
