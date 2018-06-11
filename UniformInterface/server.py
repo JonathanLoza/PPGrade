@@ -23,8 +23,8 @@ def do_login():
     session = db.getSession(engine)
     users = session.query(entities.User)
     for user in users:
-        if user.name == data['username'] and user.password == data['password']:
-            return render_template('chat.html')
+        if user.username == data['username'] and user.password == data['password']:
+            return render_template('Grades.html', user=user)
 
     return render_template('login.html')
 
@@ -96,4 +96,4 @@ def create_user():
     return 'Created users'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

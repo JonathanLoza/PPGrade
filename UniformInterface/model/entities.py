@@ -21,6 +21,7 @@ class Nota(connector.Manager.Base):
     __tablename__ = 'nota'
     id = Column(Integer, primary_key=True)
     variable = Column(String(50))
+    nota= Column(Integer, primary_key=True)
     porcentaje = Column(Integer, primary_key=True)
     curso_id=Column(Integer, ForeignKey('curso.id'))
     user_id=Column(Integer, ForeignKey('user.id'))
