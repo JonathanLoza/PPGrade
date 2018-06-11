@@ -29,10 +29,6 @@ def do_login():
     return render_template('login.html')
 
 
-<<<<<<< HEAD:UniformInterface/server.py
-
-=======
->>>>>>> c9537dfc63f3e695488ffb0f302642222012798c:PROYECTO/server.py
 @app.route('/setUsers')
 def set_user():
 
