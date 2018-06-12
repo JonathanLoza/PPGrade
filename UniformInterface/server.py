@@ -24,7 +24,7 @@ def do_login():
     users = session.query(entities.User)
     for user in users:
         if user.email == data['email'] and user.password == data['password']:
-            return render_template('Grades.html', user=user)
+            return render_template('Cursos.html', user=user)
 
     return render_template('login.html')
 
