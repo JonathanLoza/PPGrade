@@ -12,17 +12,25 @@
 </div>
 <div>
     <img src="http://www.ckphospitality.com/wp-content/uploads/2018/01/BEN00192-1-e1517206485909-800x800.jpg" class="img-thumbnail" style="width:180px;height:180px;">
-    <text class="text-center">Bienvenido  {{ user.fullname }}<text>
+    <text class="text-center">Bienvenido  {{ user.fullname }}</text>
 </div>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cursos
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#"> Fisica 1</a></li>
-    <li><a href="#">Programación Basada en Plataformas</a></li>
-    <li><a href="#">Arquitectura de Computadoras</a></li>
-  </ul>
+<div>
+    <form action="{{ url_for('add', idd=user.id) }}"  method="POST">
+        <label>Cursos</label>
+        <input type="text" name="curso" class="form-control" placeholder="Ingresa un Curso">
+        <button type="submit">Agregar</button>
+    </form>
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cursos
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      {%  for curso in user.cursos  %}
+      <li><a href="#"> {{curso.name  }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
 </div>
+
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>

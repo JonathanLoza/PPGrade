@@ -1,9 +1,7 @@
-from flask import Flask,render_template,session,request, jsonify, Response
+from flask import Flask,render_template,session,request, jsonify, Response, redirect , url_for
 from model import entities
 from database import connector
 import json
-
-
 
 
 app = Flask(__name__)
@@ -11,6 +9,7 @@ db = connector.Manager()
 
 cache = {}
 engine = db.createEngine()
+
 
 @app.route('/')
 def hello_world():
@@ -103,6 +102,18 @@ def create_user():
     session.add(user)
     session.commit()
     return 'Created users'
+
+@app.route('/add/<idd>', methods=['POST'])
+def add(idd):
+    data = request.form
+    print(idd)
+    session = db.getSession(engine)
+    curso=entities.Curso(name=data['curso'], user_id=idd)
+    user = session.query(entities.User).filter_by(id=idd)
+    print(user[0].fullname)
+    session.add(curso)
+    session.commit()
+    return render_template("Cursos.html", user=user[0])
 
 
 @app.route('/curso/<id>/<name>', methods=['GET'])
