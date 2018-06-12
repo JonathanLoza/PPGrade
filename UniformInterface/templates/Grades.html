@@ -8,7 +8,11 @@
  <h1>  Bienvenido  {{ user.fullname }}
  </h1>
 <div>
-    Ingrese su curso <
+    <form action="/add" method="POST">
+        Ingrese un nuevo curso:
+        <input type="text" name="newcurso">
+        <input type="submit" value="Agregar">
+    </form>
 </div>
 </body>
 </html>

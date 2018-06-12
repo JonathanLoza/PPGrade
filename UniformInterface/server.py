@@ -23,7 +23,7 @@ def do_login():
     session = db.getSession(engine)
     users = session.query(entities.User)
     for user in users:
-        if user.username == data['username'] and user.password == data['password']:
+        if user.email == data['email'] and user.password == data['password']:
             return render_template('Grades.html', user=user)
 
     return render_template('login.html')
@@ -32,8 +32,13 @@ def do_login():
 @app.route('/setUsers')
 def set_user():
 
-    user1 = entities.User(id=1, username='ed', fullname='Ed Jones', password='hola123')
-    user2 = entities.User(id=2, username='jb', fullname='Je Belli', password='bye123')
+    user1 = entities.User(id=1, email='ed', fullname='Ed Jones', password='hola123')
+    curso1=entities.Curso(id=1, name='Fisica')
+    nota1=entities.Nota(id=1, variable="pc1", nota=15, porcentaje=20)
+    curso1.notas=[nota1]
+    curso2 = entities.Curso(id=2 , name='Mate')
+    user1.cursos=[curso1,curso2]
+    user2 = entities.User(id=2, email='jb', fullname='Je Belli', password='bye123')
     session = db.getSession(engine)
     session.add(user1)
     session.add(user2)
@@ -86,7 +91,7 @@ def create_user():
     print(c)
     user = entities.User(
         id=c['id'],
-        username=c['username'],
+        email=c['email'],
         fullname=c['fullname'],
         password=c['password']
     )
@@ -94,6 +99,10 @@ def create_user():
     session.add(user)
     session.commit()
     return 'Created users'
+
+#@app.route('/add', methods='POST')
+#def agregarcurso():
+ #   curso= entities.Curso(id=user.id)
 
 if __name__ == '__main__':
     app.run(debug=True)

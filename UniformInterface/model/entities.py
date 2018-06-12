@@ -5,17 +5,17 @@ from database import connector
 class User(connector.Manager.Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
-    username = Column(String(50))
+    email = Column(String(50))
     fullname = Column(String(50))
     password = Column(String(12))
     cursos=relationship("Curso", backref="user")
-    notas=relationship("Nota", backref="user")
 
 class Curso(connector.Manager.Base):
     __tablename__ = 'curso'
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
     user_id=Column(Integer, ForeignKey('user.id'))
+    notas=relationship("Nota", backref="curso")
 
 class Nota(connector.Manager.Base):
     __tablename__ = 'nota'
@@ -24,5 +24,5 @@ class Nota(connector.Manager.Base):
     nota= Column(Integer, primary_key=True)
     porcentaje = Column(Integer, primary_key=True)
     curso_id=Column(Integer, ForeignKey('curso.id'))
-    user_id=Column(Integer, ForeignKey('user.id'))
+
 
