@@ -32,13 +32,13 @@ def do_login():
 @app.route('/setUsers')
 def set_user():
 
-    user1 = entities.User(id=1, email='ed', fullname='Ed Jones', password='hola123')
-    curso1=entities.Curso(id=1, name='Fisica')
-    nota1=entities.Nota(id=1, variable="pc1", nota=15, porcentaje=20)
-    curso1.notas=[nota1]
-    curso2 = entities.Curso(id=2 , name='Mate')
-    user1.cursos=[curso1,curso2]
-    user2 = entities.User(id=2, email='jb', fullname='Je Belli', password='bye123')
+    user1 = entities.User( email='ed', fullname='Ed Jones', password='hola123')
+    curso1=entities.Curso(name='Fisica', user=user1)
+    nota1=entities.Nota( variable="pc1", nota=15, porcentaje=20, curso=curso1)
+    curso2 = entities.Curso( name='Mate', user=user1)
+    user2 = entities.User(  email='jb', fullname='Je Belli', password='bye123')
+    curso3 = entities.Curso( name='Fisica', user=user2)
+    nota3=entities.Nota(variable="pc1", nota=12, porcentaje=20, curso=curso3)
     session = db.getSession(engine)
     session.add(user1)
     session.add(user2)
@@ -100,9 +100,29 @@ def create_user():
     session.commit()
     return 'Created users'
 
-#@app.route('/add', methods='POST')
-#def agregarcurso():
- #   curso= entities.Curso(id=user.id)
 
+@app.route('/curso/<id>/<name>', methods=['GET'])
+def get_cursos(id,name):
+    session = db.getSession(engine)
+    cursos = session.query(entities.Curso).filter(entities.Curso.user_id == id,entities.Curso.name == name)
+    for curso in cursos:
+        js = json.dumps(curso, cls=connector.AlchemyEncoder)
+        return  Response(js, status=200, mimetype='application/json')
+
+    message = { "status": 404, "message": "Not Found"}
+    return Response(message, status=404, mimetype='application/json')
+
+
+@app.route('/nota/<id>/<variable>', methods=['GET'])
+def get_notas(id,variable):
+    session = db.getSession(engine)
+    notas = session.query(entities.Nota).filter(entities.Nota.curso_id == id,entities.Nota.variable == variable)
+    for nota in notas:
+        print(nota.variable)
+        js = json.dumps(nota, cls=connector.AlchemyEncoder)
+        return  Response(js, status=200, mimetype='application/json')
+
+    message = { "status": 404, "message": "Not Found"}
+    return Response(message, status=404, mimetype='application/json')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=80)
