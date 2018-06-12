@@ -45,6 +45,10 @@ def set_user():
     session.commit()
     return 'Created users'
 
+@app.route('/notas')
+def notas():
+    return render_template('Notas.html')
+
 
 @app.route('/users', methods = ['GET'])
 def get_users():
@@ -125,4 +129,4 @@ def get_notas(id,variable):
     message = { "status": 404, "message": "Not Found"}
     return Response(message, status=404, mimetype='application/json')
 if __name__ == '__main__':
-    app.run(port=80)
+    app.run()

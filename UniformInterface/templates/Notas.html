@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/Notas.css') }}">
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+<div id="MainContainer" class="p-3 mb-2 bg-dark text-white">
+    <h1>Notas</h1>
+    <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Cursos</span>
+    <div class="container">
+      <h2>Poner Curso en Corchetes</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nota</th>
+            <th>Porcentaje</th>
+              <th>Puntos de Nota Final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EC1</td>
+            <td>18</td>
+            <td>20%</td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>EC2</td>
+            <td>12</td>
+            <td>30%</td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>EC3</td>
+            <td>15</td>
+            <td>40%</td>
+              <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="text-align: center"> Nota Final: 15</h3>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
