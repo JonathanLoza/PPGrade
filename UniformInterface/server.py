@@ -44,9 +44,6 @@ def set_user():
     session.commit()
     return 'Created users'
 
-@app.route('/notas')
-def notas():
-    return render_template('Notas.html')
 
 
 @app.route('/users', methods = ['GET'])
@@ -106,15 +103,37 @@ def create_user():
 @app.route('/add/<idd>', methods=['POST'])
 def add(idd):
     data = request.form
-    print(idd)
     session = db.getSession(engine)
     curso=entities.Curso(name=data['curso'], user_id=idd)
     user = session.query(entities.User).filter_by(id=idd)
-    print(user[0].fullname)
     session.add(curso)
     session.commit()
     return render_template("Cursos.html", user=user[0])
 
+@app.route('/nota/<id>/<curso>')
+def nota(id,curso):
+    session = db.getSession(engine)
+    user = session.query(entities.User).filter_by(id=id).first()
+    curso=session.query(entities.Curso).filter(entities.Curso.name == curso ,entities.Curso.user_id==id).first()
+    resultado = 0
+    for nota in curso.notas:
+        resultado += nota.nota * nota.porcentaje / 100
+    return render_template("Notas.html",user=user,curso=curso,resultado="{0:.2f}".format(resultado))
+
+
+@app.route('/add/<id>/<curso>/', methods=['POST'])
+def crearnota(id,curso):
+    data=request.form
+    session = db.getSession(engine)
+    user = session.query(entities.User).filter_by(id=id).first()
+    curso=session.query(entities.Curso).filter(entities.Curso.name == curso ,entities.Curso.user_id==id).first()
+    nota=entities.Nota(variable=data['variable'], nota=data['nota'], porcentaje=data['porcentaje'],curso_id=curso.id)
+    session.add(nota)
+    session.commit()
+    resultado = 0
+    for nota in curso.notas:
+        resultado += nota.nota * nota.porcentaje / 100
+    return render_template("Notas.html",user=user,curso=curso, resultado="{0:.2f}".format(resultado))
 
 @app.route('/curso/<id>/<name>', methods=['GET'])
 def get_cursos(id,name):
@@ -139,5 +158,14 @@ def get_notas(id,variable):
 
     message = { "status": 404, "message": "Not Found"}
     return Response(message, status=404, mimetype='application/json')
+
+@app.route('/total/<cursos>')
+def total(cursos):
+    resultado=0
+    for nota in cursos:
+        resultado+=nota.nota*nota.porcentaje/100
+    print(resultado)
+    return str(resultado)
+
 if __name__ == '__main__':
     app.run()

@@ -25,7 +25,7 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       {%  for curso in user.cursos  %}
-      <li><a href="#"> {{curso.name  }}</a></li>
+      <li><a href="{{ url_for('nota', id=user.id, curso=curso.name) }}"> {{curso.name  }}</a></li>
       {% endfor %}
     </ul>
     </div>
