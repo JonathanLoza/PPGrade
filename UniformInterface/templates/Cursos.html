@@ -7,6 +7,7 @@
     <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/Cursos.css') }}">
 </head>
 <body>
+<<<<<<< HEAD
 <div id="MainContainer" class="p-3 mb-2 bg-dark text-white">
     <div class="alert alert-success">
       <strong>Login Correcto</strong> Ahora ingresa los cursos que estás llevando
@@ -29,6 +30,29 @@
               {% endfor %}
             </ul>
         </div>
+=======
+<div class="alert alert-success">
+  <strong>Login Correcto</strong> Ahora ingresa los cursos que estás llevando
+</div>
+<div>
+    <img src="http://www.ckphospitality.com/wp-content/uploads/2018/01/BEN00192-1-e1517206485909-800x800.jpg" class="img-thumbnail" style="width:180px;height:180px;">
+    <text class="text-center">Bienvenido  {{ user.fullname }}</text>
+</div>
+<div>
+    <form action="{{ url_for('add', idd=user.id) }}"  method="POST">
+        <label>Cursos</label>
+        <input type="text" name="curso" class="form-control" placeholder="Ingresa un Curso">
+        <button type="submit">Agregar</button>
+    </form>
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cursos
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      {%  for curso in user.cursos  %}
+      <li><a href="{{ url_for('nota', id=user.id, curso=curso.name) }}"> {{curso.name  }}</a></li>
+      {% endfor %}
+    </ul>
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
     </div>
 </div>
 
