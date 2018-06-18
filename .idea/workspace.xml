@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4fd0e774-4b2f-4a4a-893b-731399e6b139" name="Default" comment="" />
+=======
+    <list default="true" id="4fd0e774-4b2f-4a4a-893b-731399e6b139" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/UniformInterface/midb.db" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/midb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/static/styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/static/styles/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/UniformInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/midb.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/static/styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/static/styles/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/static/styles/Notas.css" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/static/styles/Notas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniformInterface/templates/Notas.html" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/templates/Notas.html" afterDir="false" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
+=======
+      <change beforePath="$PROJECT_DIR$/UniformInterface/model/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/UniformInterface/model/entities.py" afterDir="false" />
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
+    </list>
+>>>>>>> c00c0d4b0a6cb8423967a8a2f2f1780b00ea2dd6
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +35,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+<<<<<<< HEAD
+    <SUITE FILE_PATH="coverage/PPGrade$server.coverage" NAME="server Coverage Results" MODIFIED="1528907379191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UniformInterface" />
+=======
     <SUITE FILE_PATH="coverage/PPGrade$server.coverage" NAME="server Coverage Results" MODIFIED="1528830538023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UniformInterface" />
+<<<<<<< HEAD
+    <SUITE FILE_PATH="coverage/PPGrade$PPGrade.coverage" NAME="PPGrade Coverage Results" MODIFIED="1529197836591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Cursos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Cursos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+<<<<<<< HEAD
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+=======
+=======
     <SUITE FILE_PATH="coverage/PPGrade$PPGrade.coverage" NAME="PPGrade Coverage Results" MODIFIED="1529328811229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
@@ -19,25 +61,35 @@
         <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Notas.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
               <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Notas.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Notas.css">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UniformInterface/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Login.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="17" />
+=======
       <file leaf-file-name="Cursos.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Cursos.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
             </state>
           </provider>
         </entry>
@@ -45,15 +97,35 @@
       <file leaf-file-name="Cursos.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="285">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+=======
             <state relative-caret-position="135">
               <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Notas.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Notas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="17" column="60" selection-start-line="17" selection-end-line="17" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#0#94#0" expanded="true" />
+=======
             <state relative-caret-position="147">
               <caret line="135" column="100" selection-start-line="135" selection-start-column="100" selection-end-line="135" selection-end-column="100" />
               <folding>
@@ -69,7 +141,12 @@
             <state relative-caret-position="309">
               <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
+<<<<<<< HEAD
+                <element signature="e#0#65#0" expanded="true" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
+=======
                 <element signature="e#0#75#0" expanded="true" />
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
               </folding>
             </state>
           </provider>
@@ -92,12 +169,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/UniformInterface/templates/login.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/UniformInterface/server.py" />
+=======
         <option value="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
         <option value="$PROJECT_DIR$/UniformInterface/static/styles/Notas.css" />
         <option value="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" />
         <option value="$PROJECT_DIR$/UniformInterface/server.py" />
         <option value="$PROJECT_DIR$/UniformInterface/templates/Notas.html" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/UniformInterface/templates/Cursos.html" />
+        <option value="$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css" />
+        <option value="$PROJECT_DIR$/UniformInterface/static/styles/Login.css" />
+=======
         <option value="$PROJECT_DIR$/UniformInterface/model/entities.py" />
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
       </list>
     </option>
   </component>
@@ -190,7 +277,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.server">
+=======
   <component name="RunManager" selected="Flask server.PPGrade">
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
     <configuration name="Notas.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PPGrade/UniformInterface/templates/Notas.html" />
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PPGrade" />
@@ -261,6 +352,14 @@
       <window_info anchor="bottom" id="Run" order="8" weight="0.327787" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="3" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.328594" />
+=======
+      <window_info anchor="bottom" id="Run" order="8" weight="0.327787" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
+=======
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2689394" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -290,8 +389,43 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Cursos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniformInterface/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="105" column="42" lean-forward="true" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Notas.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="255">
+          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-end-line="17" selection-end-column="60" />
+=======
         <state relative-caret-position="285">
           <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
@@ -334,13 +468,22 @@
           <folding>
             <element signature="e#0#75#0" expanded="true" />
           </folding>
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Notas.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="795">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+=======
+=======
+>>>>>>> d421ad6449dd8ceaf1d12ddf41ebcb3a0bc48b42
         <state relative-caret-position="690">
           <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
         </state>
       </provider>
     </entry>
@@ -376,6 +519,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="735">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Notas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+=======
         <state relative-caret-position="1980">
           <caret line="135" column="100" selection-start-line="135" selection-start-column="100" selection-end-line="135" selection-end-column="100" />
           <folding>
@@ -475,16 +636,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Cursos.css">
+    <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Cursos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="240">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/UniformInterface/templates/Notas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="17" column="60" selection-start-line="17" selection-end-line="17" selection-end-column="60" />
+=======
     <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -538,13 +706,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Notas.css">
+    <entry file="file://$PROJECT_DIR$/UniformInterface/static/styles/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        <state relative-caret-position="315">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/UniformInterface/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -557,8 +734,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/UniformInterface/server.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="135" column="100" selection-start-line="135" selection-start-column="100" selection-end-line="135" selection-end-column="100" />
+>>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
           <folding>
             <element signature="e#0#94#0" expanded="true" />
           </folding>
