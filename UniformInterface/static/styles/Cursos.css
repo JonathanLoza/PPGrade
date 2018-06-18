@@ -1,13 +1,13 @@
 
 body {
     background-image:url("https://hdwallsource.com/img/2014/9/simple-wallpaper-27245-27962-hd-wallpapers.jpg");
-    background-size: 2000px 700px ;
+    background-size: auto ;
     background-repeat: no-repeat;
     margin: 175px;
 }
 
 .alert-success {
-    max-width: auto;
+    max-width: 100%;
     background: white;
     padding: 10px;
 }

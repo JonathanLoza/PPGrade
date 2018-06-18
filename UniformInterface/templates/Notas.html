@@ -8,18 +8,27 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+    {%  for curso in user.cursos  %}
+      <li><a href="{{ url_for('nota', id=user.id, curso=curso.name) }}"> {{curso.name  }}</a></li>
+    {% endfor %}
 </div>
 
-
 <div id="MainContainer" class="p-3 mb-2 bg-dark text-white">
-    <h1>Notas</h1>
+    <div id="Agregar" class="">
+      <form class="form-signin" action="{{ url_for('crearnota',id=user.id,curso=curso.name)}}" method="post">
+        <label>Variable</label>
+        <input type="text" name="variable" value="" required>
+        <label>Nota</label>
+        <input type="text" name="nota" value="" required>
+        <label>Porcentaje</label>
+        <input type="text" name="porcentaje" value="" required>
+        <button class="btn btn-primary" type="submit" name="button">Agregar</button>
+      </form>
+    </div>
     <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Cursos</span>
+    <h1>Notas</h1>
     <div class="container">
-      <h2>Poner Curso en Corchetes</h2>
+      <h2>{{ curso.name }}</h2>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -30,28 +39,18 @@
           </tr>
         </thead>
         <tbody>
+        {% for nota in curso.notas %}
           <tr>
-            <td>EC1</td>
-            <td>18</td>
-            <td>20%</td>
-              <td></td>
+            <td>{{ nota.variable }}</td>
+            <td>{{ nota.nota }}</td>
+            <td>{{ nota.porcentaje }}%</td>
+              <td>{{ nota.nota*nota.porcentaje/100 }}</td>
           </tr>
-          <tr>
-            <td>EC2</td>
-            <td>12</td>
-            <td>30%</td>
-              <td></td>
-          </tr>
-          <tr>
-            <td>EC3</td>
-            <td>15</td>
-            <td>40%</td>
-              <td></td>
-          </tr>
+        {% endfor %}
         </tbody>
       </table>
     </div>
-    <h3 style="text-align: center"> Nota Final: 15</h3>
+    <h3 style="text-align: center"> Nota Final: {{ resultado }}</h3>
 </div>
 
 <script>
@@ -62,6 +61,14 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+function Total(cursos) {
+    var resultado=0;
+    for (var curso in cursos){
+        resultado+=curso.nota*nota.porcentaje/100;
+    }
+     alert( resultado);
+}
+Total(curso.notas);
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
