@@ -15,6 +15,7 @@ engine = db.createEngine()
 def hello_world():
     return render_template('login.html')
 
+
 @app.route('/dologin',  methods = ['POST'])
 def do_login():
 
@@ -24,7 +25,21 @@ def do_login():
     for user in users:
         if user.email == data['email'] and user.password == data['password']:
             return render_template('Cursos.html', user=user)
+    return render_template('login.html')
 
+
+@app.route('/signin')
+def signin():
+    return render_template('Sign.html')
+
+
+@app.route('/crear', methods=['POST'])
+def crearuser():
+    data=request.form
+    session = db.getSession(engine)
+    user=entities.User(email=data['email'],fullname=data['fullname'], password=data['password'])
+    session.add(user)
+    session.commit()
     return render_template('login.html')
 
 
@@ -46,6 +61,7 @@ def set_user():
 
 
 
+
 @app.route('/users', methods = ['GET'])
 def get_users():
     key = 'getUsers'
@@ -62,6 +78,7 @@ def get_users():
     for user in users:
         response.append(user)
     return json.dumps(response, cls=connector.AlchemyEncoder)
+
 
 @app.route('/users/<id>', methods = ['GET'])
 def get_user(id):
@@ -100,6 +117,7 @@ def create_user():
     session.commit()
     return 'Created users'
 
+
 @app.route('/add/<idd>', methods=['POST'])
 def add(idd):
     data = request.form
@@ -109,6 +127,7 @@ def add(idd):
     session.add(curso)
     session.commit()
     return render_template("Cursos.html", user=user[0])
+
 
 @app.route('/nota/<id>/<curso>')
 def nota(id,curso):
@@ -135,6 +154,7 @@ def crearnota(id,curso):
         resultado += nota.nota * nota.porcentaje / 100
     return render_template("Notas.html",user=user,curso=curso, resultado="{0:.2f}".format(resultado))
 
+
 @app.route('/curso/<id>/<name>', methods=['GET'])
 def get_cursos(id,name):
     session = db.getSession(engine)
@@ -159,6 +179,7 @@ def get_notas(id,variable):
     message = { "status": 404, "message": "Not Found"}
     return Response(message, status=404, mimetype='application/json')
 
+
 @app.route('/total/<cursos>')
 def total(cursos):
     resultado=0
@@ -166,6 +187,7 @@ def total(cursos):
         resultado+=nota.nota*nota.porcentaje/100
     print(resultado)
     return str(resultado)
+
 
 if __name__ == '__main__':
     app.run()
