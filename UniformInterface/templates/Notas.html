@@ -11,22 +11,7 @@
     {%  for curso in user.cursos  %}
       <li><a href="{{ url_for('nota', id=user.id, curso=curso.name) }}"> {{curso.name  }}</a></li>
     {% endfor %}
-<<<<<<< HEAD
-=======
 </div>
-<div id="Agregar" class="">
-  <form class="form-signin" action="{{ url_for('crearnota',id=user.id,curso=curso.name)}}" method="post">
-    <label>Variable</label>
-    <input type="text" name="variable" value="" required>
-    <label>Nota</label>
-    <input type="text" name="nota" value="" required>
-    <label>Porcentaje</label>
-    <input type="text" name="porcentaje" value="" required>
-    <button type="submit" name="button">Agregar</button>
-  </form>
->>>>>>> eb08bb7831582e9635c5475bfdd505dc0b56a33f
-</div>
-
 <div id="MainContainer" class="p-3 mb-2 bg-dark text-white">
     <div id="Agregar" class="">
       <form class="form-signin" action="{{ url_for('crearnota',id=user.id,curso=curso.name)}}" method="post">
