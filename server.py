@@ -155,6 +155,20 @@ def crearnota(id,curso):
     return render_template("Notas.html",user=user,curso=curso, resultado="{0:.2f}".format(resultado))
 
 
+@app.route('/delete/<id>/<curso>/<variable>')
+def eliminar(id,curso,variable):
+    session = db.getSession(engine)
+    user = session.query(entities.User).filter_by(id=id).first()
+    curso1 = session.query(entities.Curso).filter(entities.Curso.name == curso, entities.Curso.user_id == id).first()
+    nota=session.query(entities.Nota).filter(entities.Nota.curso_id==curso1.id, entities.Nota.variable==variable).first()
+    session.delete(nota)
+    session.commit()
+    resultado = 0
+    for nota in curso1.notas:
+        resultado += nota.nota * nota.porcentaje / 100
+    return render_template("Notas.html",user=user,curso=curso1, resultado="{0:.2f}".format(resultado))
+
+
 @app.route('/curso/<id>/<name>', methods=['GET'])
 def get_cursos(id,name):
     session = db.getSession(engine)

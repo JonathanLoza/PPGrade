@@ -44,6 +44,7 @@
             <td>{{ nota.nota }}</td>
             <td>{{ nota.porcentaje }}%</td>
               <td>{{ nota.nota*nota.porcentaje/100 }}</td>
+          <td> <a class="btn btn-primary"  href="{{ url_for('eliminar',id=user.id,curso=curso.name, variable=nota.variable) }}">Eliminar</a></td>
           </tr>
         {% endfor %}
         </tbody>
