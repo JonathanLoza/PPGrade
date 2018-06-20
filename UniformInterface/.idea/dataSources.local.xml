@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="midb" uuid="bcbd93f4-4ef7-4bbd-8181-c4ce7d527d5f">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-    </data-source>
-  </component>
-</project>
