@@ -14,14 +14,12 @@
 		  <input type="text" id="inputEmail" name="email" class="form-control" placeholder="Correo" required autofocus>
 		  <label for="inputPassword" class="sr-only">Contraseña</label>
 		  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
-		  <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
+		  <button class="btn btn-lg btn-primary btn-block" type="submit">Inicia Sesión</button>
 		  <p class="mt-5 mb-3 text-muted">&copy; UTEC</p>
 		</form>
 	</div>
 	<div>
-	<h1 class="display-3">Bica?</h1>
+	    <h1 class="display-3">Bica?</h1>
+        <a class="btn btn-primary" href="{{ url_for('signin') }}"> Regístrate</a>
 	</div>
-    <div>
-        <a href="{{ url_for('signin') }}"> SignIn</a>
-    </div>
   </body>

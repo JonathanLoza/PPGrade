@@ -1,0 +1,22 @@
+body {
+    background-image:url("https://hdwallsource.com/img/2014/9/simple-wallpaper-27245-27962-hd-wallpapers.jpg");
+    background-size: auto ;
+    background-repeat: no-repeat;
+    margin: 100px;
+    color: antiquewhite;
+}
+
+.MainContainer{
+    background-color: darkslategray;
+    padding: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.form-signin{
+    margin-left: 120px;
+}
+
+.btn-primary{
+    margin-left: 40px;
+}
