@@ -33,6 +33,14 @@ def signin():
     return render_template('Sign.html')
 
 
+@app.route('/cursitos/<id>')
+def cursitos(id):
+    session = db.getSession(engine)
+    user=session.query(entities.User).filter(entities.User.id==id).first()
+    return render_template('Cursos.html', user=user)
+
+
+
 @app.route('/crear', methods=['POST'])
 def crearuser():
     data=request.form
