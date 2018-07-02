@@ -1,10 +1,12 @@
 from flask import Flask,render_template,session,request, jsonify, Response, redirect , url_for
-from model import entities
-from database import connector
+from Web.model import entities
+from sqlalchemy import or_, and_
+from Web.database import connector
 import json
 
 
 app = Flask(__name__)
+app.secret_key = "secretkey"
 db = connector.Manager()
 
 cache = {}
@@ -39,6 +41,49 @@ def cursitos(id):
     user=session.query(entities.User).filter(entities.User.id==id).first()
     return render_template('Cursos.html', user=user)
 
+@app.route('/mobile_login', methods = ['POST'])
+def mobile_login():
+    obj = request.get_json(silent=True)
+    print(obj)
+    email = obj['email']
+    password = obj['password']
+    sessiondb = db.getSession(engine)
+    user = sessiondb.query(entities.User).filter(
+        and_(entities.User.email == email, entities.User.password == password )
+    ).first()
+    if user != None:
+        session['logged'] = user.id
+        return Response(json.dumps({'response': True, "id": user.id, "fullname": user.fullname}, cls=connector.AlchemyEncoder), mimetype='application/json')
+    else:
+        return Response(json.dumps({'response': False}, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+
+@app.route('/addcurso', methods = ['POST'])
+def addcurso():
+    obj = request.get_json(silent=True)
+    print(obj)
+    user_id = obj['user_id']
+    name = obj['name']
+    sessiondb = db.getSession(engine)
+    curso = entities.Curso(name=name, user_id=int(user_id))
+    sessiondb.add(curso)
+    sessiondb.commit()
+    return Response(json.dumps({'response': True}, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+
+@app.route('/addnota', methods = ['POST'])
+def addnota():
+    obj = request.get_json(silent=True)
+    print(obj)
+    curso_id = obj['curso_id']
+    nota = obj['nota']
+    variable=obj['variable']
+    porcentaje=obj['porcentaje']
+    sessiondb = db.getSession(engine)
+    nota=entities.Nota(variable=variable, nota=nota, porcentaje=porcentaje, curso_id=curso_id)
+    sessiondb.add(nota)
+    sessiondb.commit()
+    return Response(json.dumps({'response': True}, cls=connector.AlchemyEncoder), mimetype='application/json')
 
 
 @app.route('/crear', methods=['POST'])
@@ -66,8 +111,6 @@ def set_user():
     session.add(user2)
     session.commit()
     return 'Created users'
-
-
 
 
 @app.route('/users', methods = ['GET'])
@@ -178,7 +221,7 @@ def eliminar(id,curso,variable):
 
 
 @app.route('/curso/<id>/<name>', methods=['GET'])
-def get_cursos(id,name):
+def get_curso(id,name):
     session = db.getSession(engine)
     cursos = session.query(entities.Curso).filter(entities.Curso.user_id == id,entities.Curso.name == name)
     for curso in cursos:
@@ -187,6 +230,28 @@ def get_cursos(id,name):
 
     message = { "status": 404, "message": "Not Found"}
     return Response(message, status=404, mimetype='application/json')
+
+@app.route('/cursos/<id>', methods=['GET'])
+def get_cursos(id):
+    sessiondb = db.getSession(engine)
+    cursos = sessiondb.query(entities.Curso).filter(entities.Curso.user_id == id)
+    data=[]
+    for curso in cursos:
+        data.append(curso)
+    return Response(json.dumps({'response': data}, cls=connector.AlchemyEncoder), mimetype='application/json')
+
+
+@app.route('/notas/<id>', methods=['GET'])
+def getnotas(id):
+    sessiondb = db.getSession(engine)
+    resultado = 0
+    notas = sessiondb.query(entities.Nota).filter(entities.Nota.curso_id == id)
+    data=[]
+    for nota in notas:
+        resultado += nota.nota * nota.porcentaje / 100
+        data.append(nota)
+    final = "{0:.2f}".format(resultado)
+    return Response(json.dumps({'response': data, "final": final}, cls=connector.AlchemyEncoder), mimetype='application/json')
 
 
 @app.route('/nota/<id>/<variable>', methods=['GET'])
